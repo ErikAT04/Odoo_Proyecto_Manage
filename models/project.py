@@ -8,7 +8,7 @@ class project(models.Model):
     id = fields.Char()
     name = fields.Char()
     description = fields.Text()
-    histories = fields.One2many(string="Histories", comodel_name="manageerik.history", inverse_name="project")
-    sprints = fields.One2many(string="Sprints", comodel_name="manageerik.sprint", inverse_name="project")
+    histories = fields.One2many(string="Histories", comodel_name="manageerik.history", inverse_name="project", readonly=True)
+    sprints = fields.One2many(string="Sprints", comodel_name="manageerik.sprint", inverse_name="project", readonly=True)
 
 

@@ -15,7 +15,7 @@
                     <field name="sprint"/>
                     <field name="technologies"/>
                     <field name="history"/>
-                    <field name="projects"/>
+                    <field name="project"/>
                 </tree>
             </field>
         </record>
@@ -37,7 +37,7 @@
                         <field name="history"/>
                         <field name="sprint"/>
                         <field name="technologies"/>
-                        <field name="projects"/>
+                        <field name="project"/>
                     </group>
                 </sheet>
                 </form>

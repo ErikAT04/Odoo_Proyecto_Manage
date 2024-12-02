@@ -10,7 +10,7 @@ class history(models.Model):
     description = fields.Text()
     project = fields.Many2one("manageerik.project", ondelete = "cascade", 
                              string="Project")
-    tasks = fields.One2many(string = "Tasks", comodel_name="manageerik.task", inverse_name="history")
+    tasks = fields.One2many(string = "Tasks", comodel_name="manageerik.task", inverse_name="history", readonly=True)
     used_technologies = fields.Many2many("manageerik.technology", compute="_get_used_technologies")
 
     def _get_used_technologies(self):

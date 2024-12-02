@@ -11,7 +11,7 @@ class sprint(models.Model):
     start_date = fields.Datetime()
     duration = fields.Integer()
     end_date = fields.Datetime(compute="_get_end_date", store=True)
-    tasks = fields.One2many(string="tasks", comodel_name="manageerik.task", inverse_name="sprint")
+    tasks = fields.One2many(string="tasks", comodel_name="manageerik.task", inverse_name="sprint", readonly=True)
     project = fields.Many2one("manageerik.project", string="project", required = False, ondelete = "cascade")
 
     @api.depends('start_date', 'duration')

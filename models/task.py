@@ -18,7 +18,7 @@ class task(models.Model):
                                     relation = "techs_tasks", 
                                     column1 = "technologies", column2 = "tasks")
     history = fields.Many2one("manageerik.history", required = True, ondelete = "cascade", string="History")
-    project = fields.Many2one('manage.project', related='history.project', readonly=True)
+    project = fields.Many2one('manageerik.project', related='history.project', readonly=True)
 
     @api.depends('name')
     def _get_code(self):
