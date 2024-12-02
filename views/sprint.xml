@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vista_manageerik_sprint_tree">
+            <field name="name">vista_manageerik_sprint_tree</field>
+            <field name="model">manageerik.sprint</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="duration"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="tasks"/>
+                    <field name="project"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vista_manageerik_sprint_form">
+            <field name="name">vista_manageerik_sprint_form</field>
+            <field name="model">manageerik.sprint</field>
+            <field name="arch" type="xml">
+                <form string="Enter Sprint" >
+                <sheet>
+                    <group name="group_top">
+                        <field name="id"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="duration"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="tasks"/>
+                        <field name="project"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_manageerik_sprint_form">
+            <field name="name">Sprint List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">manageerik.sprint</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Sprints
+                </p>
+                <p> Click <strong> 'Create' </strong> to add new sprints
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Management" id="menu_manageerik_raiz"/>
+        <menuitem name="Project Management" id="menu_manageerik_manage_list" parent="menu_manageerik_raiz"/>
+        <menuitem name="Sprints" id="menu_manageerik_sprint" parent="menu_manageerik_manage_list" action="action_manageerik_sprint_form"/>
+    </data>
+</odoo>

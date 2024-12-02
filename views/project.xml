@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vista_manageerik_project_tree">
+            <field name="name">vista_manageerik_project_tree</field>
+            <field name="model">manageerik.project</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="histories"/>
+                    <field name="sprints"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vista_manageerik_project_form">
+            <field name="name">vista_manageerik_project_form</field>
+            <field name="model">manageerik.project</field>
+            <field name="arch" type="xml">
+                <form string="Enter Project" >
+                <sheet>
+                    <group name="group_top">
+                        <field name="id"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="histories"/>
+                        <field name="sprints"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_manageerik_project_form">
+            <field name="name">Project List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">manageerik.project</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Project
+                </p>
+                <p> Click <strong> 'Create' </strong> to add new projects
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="Management" id="menu_manageerik_raiz"/>
+        <menuitem name="Project Management" id="menu_manageerik_manage_list" parent="menu_manageerik_raiz"/>
+        <menuitem name="Projects" id="menu_manageerik_project" parent="menu_manageerik_manage_list" action="action_manageerik_project_form"/>
+    </data>
+</odoo>
